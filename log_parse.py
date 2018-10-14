@@ -71,7 +71,6 @@ def parse(
 
 		if search:
 			search = search.groupdict()
-			count[search['request']] += 1
 			log = datetime.strptime(search['date'], '%d/%b/%Y %X')
 
 			if start_at:
@@ -81,6 +80,8 @@ def parse(
 			if stop_at:
 				if log > stop_at:
 					break
+					
+			count[search['request']] += 1
 
 			if slow_queries:
 				response_time[search['request']] += int(search['response_time'])
