@@ -92,7 +92,3 @@ def parse(
 	file.close()
 
 	return [out[1] for out in count.most_common(5)]
-
-
-if __name__ == '__main__':
-    parse()
